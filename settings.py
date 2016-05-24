@@ -128,7 +128,9 @@ INSTALLED_APPS = (
     'rest_framework',
     'rest_framework.authtoken',
     'rest_auth',
-    'uploader'
+    'uploader',
+    'downloader.apps.DownloaderConfig',
+    'androider.apps.AndroiderConfig',
 )
 
 # A sample logging configuration. The only tangible logging
