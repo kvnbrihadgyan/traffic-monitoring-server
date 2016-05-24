@@ -10,6 +10,9 @@ urlpatterns = patterns('',
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^', include('main.urls')),
     url(r'^uploader/', include('uploader.urls', namespace="uploader")),
+    url(r'^downloader/', include('downloader.urls')),
+    url(r'^androider/', include('androider.urls')),
+
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
