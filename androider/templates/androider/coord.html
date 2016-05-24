@@ -1,0 +1,10 @@
+{% if initialcoordinates %}
+
+    <form action="{% url 'androider:dijk' %}" method="post">
+        {% csrf_token %}
+        Initial={{ initialcoordinates }}, Final={{ finalcoordinates }}
+        <input type="submit" value="Dijk list" />
+    </form>
+{%else%}
+	<p>No list coordinates available</p>
+{%endif%}
