@@ -1,0 +1,14 @@
+{% if device %}
+	<ul>
+    	{% for dev in device.all %}
+            <li>{{ dev.dev_id }}--{{ dev.lat }},{{ dev.lon }}</li>
+	    {%endfor%}
+	</ul>
+{%else%}
+	<p>No device available.</p>
+{%endif%}
+
+<form action="{% url 'downloader:exportcsv' %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Generate CSV file" />
+</form>
