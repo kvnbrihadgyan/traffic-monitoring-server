@@ -1,7 +1,12 @@
 from django.db import models
 
-# Create your models here.
+
+class DeviceData(models.Model):
+    dev_id = models.IntegerField(primary_key=True)
+    lat = models.DecimalField(max_digits=15, decimal_places=8)
+    lon = models.DecimalField(max_digits=15, decimal_places=8)
+
 class TrafficData(models.Model):
-	bt_id = models.CharField(max_length=12)
-	timestamp = models.DateTimeField(auto_now_add=True)
-	dev_id = models.IntegerField()
+    device = models.ForeignKey(DeviceData, on_delete=models.CASCADE)
+    timestamp = models.DateTimeField(auto_now_add=True)
+    macadd = models.CharField(max_length=12)
