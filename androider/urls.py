@@ -7,7 +7,7 @@ from . import views
 app_name='androider'
 urlpatterns = [
     url(r'^$', views.device_list, name='device_list'),
-    url(r'^?initialPoint=(?P<inicoord>[[-+]?[0-9]*\.?[0-9]+,[-+]?[0-9]*\.?[0-9]+])&finalPoint=(?P<fincoord>[[-+]?[0-9]*\.?[0-9]+,[-+]?[0-9]*\.?[0-9]+])/coord/$', views.coord, name='coord'),
+    url(r'^initialPoint=(?P<inicoord>[-?[0-9.]+,[-+]?[0-9.]+])&finalPoint=(?P<fincoord>[-?[0-9.]+,[-+]?[0-9.]+])/$',views.coord, name='coord'),
     url(r'^/dijk/$', views.dijk, name='dijk'),
 
 ]
