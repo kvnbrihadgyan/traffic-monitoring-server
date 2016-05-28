@@ -9,4 +9,4 @@ class DeviceData(models.Model):
 class TrafficData(models.Model):
     device = models.ForeignKey(DeviceData, on_delete=models.CASCADE)
     timestamp = models.DateTimeField(auto_now_add=True)
-    macadd = models.CharField(max_length=12)
+    macadd = models.CharField(max_length=19)
